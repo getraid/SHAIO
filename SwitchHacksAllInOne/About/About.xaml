@@ -1,0 +1,86 @@
+﻿<mah:MetroWindow x:Class="SwitchHacksAllInOne.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SwitchHacksAllInOne"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        mc:Ignorable="d"
+        Title="About" Height="550" Width="800" Closing="BackToMainFrm">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="186*"/>
+            <RowDefinition Height="24*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="47*"/>
+            <ColumnDefinition Width="215*"/>
+            <ColumnDefinition Width="129*"/>
+            <ColumnDefinition Width="230*"/>
+            <ColumnDefinition Width="125*"/>
+            <ColumnDefinition Width="61*"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="4" Grid.Row="1" Grid.RowSpan="3" VerticalAlignment="Center"/>
+        <Label Content="Programmed by © RapidRaid 2018" Grid.Row="1" RenderTransformOrigin="0.44,0.663" HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Center"/>
+        <Label Content="getraid.com" Grid.Row="1" Foreground="DeepSkyBlue" Grid.Column="2" MouseDown="Label_MouseDown" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Content="github.com/getraid" Grid.Row="1" Foreground="DeepSkyBlue" Grid.Column="3" MouseDown="Label_MouseDown" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Content="Theme: mahapps.metro" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <Label Content="mahapps.com" Grid.Column="2" Grid.Row="2" Foreground="DeepSkyBlue" MouseDown="Label_MouseDown" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+        <RichTextBox Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4" Grid.RowSpan="2" mah:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="Thank you for downloading and using my program!"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="Special thanks to the people who made this possible:"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="------------------------------------------------------------"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="The Switchbrew-Team - http://switchbrew.org"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="Michael/SciresM - https://twitter.com/SciresM"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="naehrwert - https://twitter.com/naehrwert"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="fail0verflow - https://twitter.com/fail0verflow"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="DavidBuchanan314 - https://github.com/DavidBuchanan314"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="ktemkin - https://www.ktemkin.com/ "/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="hedgeberg - https://twitter.com/hedgeberg "/>
+                </Paragraph>
+
+                <Paragraph>
+                    <Run Text="... and many more that I forgot to mention (I'm sorry!) ⊙﹏⊙"/>
+                </Paragraph>  
+                <Paragraph>
+                    <Run Text="------------------------------------------------"/>
+                </Paragraph>    
+                <Paragraph>
+                    <Run Text="Other Stuff used:"/>
+                </Paragraph>  
+                <Paragraph>
+                    <Run Text="Costura.Fody MIT- https://github.com/Fody/Costura "/>
+                </Paragraph>             
+                <Paragraph>
+                    <Run Text="mahapps.metro MIT- https://mahapps.com/"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</mah:MetroWindow>
