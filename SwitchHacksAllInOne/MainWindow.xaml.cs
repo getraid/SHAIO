@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
-
+using AutoUpdaterDotNET;
 
 namespace SwitchHacksAllInOne
 {
@@ -23,8 +23,10 @@ namespace SwitchHacksAllInOne
     public MainWindow()
         {
             InitializeComponent();
-
-            //todo check for update of this tool
+            //Check if update is available 
+            AutoUpdater.OpenDownloadPage = true;
+            AutoUpdater.Start("http://git.getraid.com/SHAIO/version.xml");
+           
         }
 
         private void Update_Click(object sender, RoutedEventArgs e)
