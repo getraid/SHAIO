@@ -15,6 +15,7 @@ using MahApps.Metro.Controls;
 using System.IO;
 using System.Threading;
 using System.Windows.Threading;
+using AutoUpdaterDotNET;
 
 namespace SwitchHacksAllInOne
 {
@@ -113,5 +114,9 @@ namespace SwitchHacksAllInOne
                 new Action(delegate { }));
         }
 
+        private void UpdateSHAIO(object sender, RoutedEventArgs e)
+        {
+            AutoUpdater.Start();
+        }
     }
 }

@@ -20,18 +20,30 @@ namespace SwitchHacksAllInOne
 
     public partial class MainWindow : MetroWindow
     {
-    public MainWindow()
+        public MainWindow()
         {
             InitializeComponent();
-            //Check if update is available 
+            CheckForUpdates();
+
+        }
+
+        /// <summary>
+        /// Check if updates are available
+        /// </summary>
+        private static void CheckForUpdates()
+        {
             AutoUpdater.OpenDownloadPage = true;
-            AutoUpdater.Start("http://git.getraid.com/SHAIO/version.xml");
-           
+            AutoUpdater.AppCastURL = "http://git.getraid.com/SHAIO/version.xml";
+            AutoUpdater.Start();
+
+            //todo autoupdating everything
+            //AutoUpdater.DownloadPath = Environment.CurrentDirectory;
+
         }
 
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            Update up =  new Update(this);
+            Update up = new Update(this);
             up.Show();
             this.Hide();
         }

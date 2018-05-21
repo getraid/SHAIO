@@ -11,7 +11,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="76*"/>
             <RowDefinition Height="81*"/>
-            <RowDefinition Height="233*"/>
+            <RowDefinition Height="76*"/>
+            <RowDefinition Height="157*"/>
             <RowDefinition Height="29*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -22,6 +23,7 @@
             <ColumnDefinition Width="19*"/>
         </Grid.ColumnDefinitions>
         <Button Content="Search for new releases" Grid.Column="2" Grid.Row="1" Click="SearchForUpdates"/>
-        <ProgressBar Name="ProgressBar" Grid.Row="3" Grid.ColumnSpan="5" Grid.Column="0" />
+        <ProgressBar Name="ProgressBar" Grid.Row="4" Grid.ColumnSpan="5" Grid.Column="0" />
+        <Button Content="Update SHAIO itself" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Click="UpdateSHAIO"/>
     </Grid>
 </mah:MetroWindow>
