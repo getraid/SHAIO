@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using AutoUpdaterDotNET;
+using SwitchHacksAllInOne.PayloadTools;
 
 namespace SwitchHacksAllInOne
 {
@@ -24,7 +25,6 @@ namespace SwitchHacksAllInOne
         {
             InitializeComponent();
             CheckForUpdates();
-
         }
 
         /// <summary>
@@ -32,6 +32,7 @@ namespace SwitchHacksAllInOne
         /// </summary>
         private static void CheckForUpdates()
         {
+            AutoUpdater.ShowRemindLaterButton = false;
             AutoUpdater.OpenDownloadPage = true;
             AutoUpdater.AppCastURL = "http://git.getraid.com/SHAIO/version.xml";
             AutoUpdater.Start();
@@ -43,21 +44,21 @@ namespace SwitchHacksAllInOne
 
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            Update up = new Update(this);
+            Updates.Update up = new Updates.Update(this);
             up.Show();
             this.Hide();
         }
 
         private void SDTools_Click(object sender, RoutedEventArgs e)
         {
-            SDTools sdTools = new SDTools(this);
+            SDTool.SDTools sdTools = new SDTool.SDTools(this);
             sdTools.Show();
             this.Hide();
         }
 
         private void PayloadClick(object sender, RoutedEventArgs e)
         {
-            PayloadTools payloadTools = new PayloadTools(this);
+            MainTool payloadTools = new MainTool(this);
             payloadTools.Show();
             this.Hide();
         }

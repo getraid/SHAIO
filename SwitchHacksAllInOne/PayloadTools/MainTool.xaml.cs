@@ -1,32 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using MahApps.Metro.Controls;
-using Path = System.IO.Path;
+using SwitchHacksAllInOne.Properties;
 
-namespace SwitchHacksAllInOne
+namespace SwitchHacksAllInOne.PayloadTools
 {
     /// <summary>
     /// Interaction logic for PayloadTools.xaml
     /// </summary>
-    public partial class PayloadTools : MetroWindow
+    public partial class MainTool : MetroWindow
     {
         private readonly MainWindow _mainWindow;
 
-        public PayloadTools(MainWindow mainWindow)
+        public MainTool(MainWindow mainWindow)
         {
+            if (Settings.Default.firstLaunch == true)
+            {
+                MessageBox.Show("If this is your first launch, make sure to install the drivers," +
+                                " else the switch can't connect.\nClick the button on the bottom left to install the drivers.");
+                Settings.Default.firstLaunch = false;
+                Settings.Default.Save();
+            }
+
             _mainWindow = mainWindow;
             InitializeComponent();
         }
@@ -80,6 +76,13 @@ namespace SwitchHacksAllInOne
                             "click on the copied .apk file.\r\nIt will ask you whether to install this" +
                             " app or not. Click Yes or OK.");
             Process.Start(@Path.Combine(Directory.GetCurrentDirectory()));
+        }
+
+        private void ShowOtherPayloadLaunchers(object sender, RoutedEventArgs e)
+        {
+            var otherPayloads = new OtherPayloads(this);
+            otherPayloads.Show();
+            this.Hide();
         }
     }
 }

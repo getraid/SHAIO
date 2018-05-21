@@ -74,15 +74,20 @@
     <Compile Include="About\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PayloadTools\PayloadTools.xaml.cs">
-      <DependentUpon>PayloadTools.xaml</DependentUpon>
+    <Compile Include="PayloadTools\OtherPayloads.xaml.cs">
+      <DependentUpon>OtherPayloads.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SDTools\SDTools.xaml.cs">
+    <Compile Include="PayloadTools\MainTool.xaml.cs">
+      <DependentUpon>MainTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SDTool\SDTools.xaml.cs">
       <DependentUpon>SDTools.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Update\Update.xaml.cs">
+    <Compile Include="Updates\SearchForUpdates.cs" />
+    <Compile Include="Updates\Update.xaml.cs">
       <DependentUpon>Update.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Updates\UpdateInfo.cs" />
     <Page Include="About\About.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -99,15 +104,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PayloadTools\PayloadTools.xaml">
+    <Page Include="PayloadTools\OtherPayloads.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SDTools\SDTools.xaml">
+    <Page Include="PayloadTools\MainTool.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Update\Update.xaml">
+    <Page Include="SDTool\SDTools.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Updates\Update.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
