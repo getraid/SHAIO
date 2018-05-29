@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using AutoUpdaterDotNET;
+
 using SwitchHacksAllInOne.PayloadTools;
 
 namespace SwitchHacksAllInOne
@@ -69,5 +70,7 @@ namespace SwitchHacksAllInOne
             about.Show();
             this.Hide();
         }
+
+  
     }
 }

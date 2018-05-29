@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SwitchHacksAllInOne"
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
         mc:Ignorable="d"
-        Title="PayloadTools" Height="450" Width="800" Closing="BackToMainFrm">
+        Title="PayloadTools" Height="450" Width="900" Closing="BackToMainFrm">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"/>
@@ -21,27 +21,31 @@
             <RowDefinition Height="40*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50*"/>
-            <ColumnDefinition Width="120*"/>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition Width="50*"/>
-            <ColumnDefinition Width="70*"/>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition Width="200*"/>
-            <ColumnDefinition Width="175*"/>
-            <ColumnDefinition Width="25*"/>
-            <ColumnDefinition Width="60*"/>
-            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="26*"/>
+            <ColumnDefinition Width="134*"/>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="17*"/>
+            <ColumnDefinition Width="123*"/>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="211*"/>
+            <ColumnDefinition Width="133*"/>
+            <ColumnDefinition Width="43*"/>
+            <ColumnDefinition Width="16*"/>
+            <ColumnDefinition Width="48*"/>
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="57*"/>
+            <ColumnDefinition Width="13*"/>
         </Grid.ColumnDefinitions>
 
         <Label Content="Choose payload:" Grid.Column="1" FontSize="14" Grid.Row="2" Grid.RowSpan="5"/>
         <Button Content="Other PayloadLauncher Options" Click="ShowOtherPayloadLaunchers" Grid.Row="8" Grid.Column="6"/>
-        <Button Content="What should I do? / Help" Grid.Column="3" FontSize="8" Click="ClickWhatShouldIDo"  Grid.Row="8" Grid.ColumnSpan="2"/>
+        <Button Content="What should I do? / Help" Grid.Column="8" FontSize="8" Click="ClickWhatShouldIDo"  Grid.Row="8" Grid.ColumnSpan="4"/>
         <Button Content="Install Drivers" Grid.Column="1" FontSize="8" Grid.Row="8"/>
-        <Button Content="Launch" Grid.Column="6" Grid.Row="6" RenderTransformOrigin="0.509,0.529"/>
-        <ComboBox Grid.ColumnSpan="4" Grid.Column="4" Grid.Row="2" RenderTransformOrigin="0.5,0.5"/>
-        <Label Content="Wait for RCM..." Grid.Column="6" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button Content="Refresh" Grid.Column="9" Grid.Row="2"/>
+        <Button Name="LaunchButton" Content="Launch" Grid.Column="6" Grid.Row="6" RenderTransformOrigin="0.509,0.529" Click="MainButtonClick" Height="69" VerticalAlignment="Bottom" IsEnabled="False" />
+        <ComboBox Name="Combo" Grid.ColumnSpan="5" Grid.Column="4" Grid.Row="2" SelectionChanged="Combo_SelectionChanged"/>
+        <Button Content="+" Grid.Column="10" Grid.Row="2" Height="35" VerticalAlignment="Bottom" Click="RefreshButton" FontWeight="ExtraLight" FontStretch="Condensed" FontStyle="Italic" FontSize="18"/>
+        <Button Content="Refresh" Grid.Column="12" Grid.Row="2" Height="35" VerticalAlignment="Bottom" Click="RefreshButton"/>
+        <Label Content="This will launch TegraRcmSmash 1.2.0-2 by rajkosto " Grid.Column="6" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Bottom" Width="194" Foreground="#FF444444" FontSize="8" Height="21"/>
 
     </Grid>
 </mah:MetroWindow>

@@ -1,7 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows;
+using System.Windows.Documents;
 using MahApps.Metro.Controls;
+using SwitchHacksAllInOne.Model;
 
 namespace SwitchHacksAllInOne.SDTool
 {
@@ -12,50 +16,32 @@ namespace SwitchHacksAllInOne.SDTool
     {
         private readonly MainWindow _mainWindow;
 
+        public FileManager FileManager { get; }
+
         public SDTools(MainWindow mainWindow)
         {
             InitializeComponent();
-       
+            FileManager = new FileManager();
             UpdateDrives();
-
-
             _mainWindow = mainWindow;
-  
+
         }
 
         private void UpdateDrives()
         {
-            DriveInfo[] drives = GetDrives();
-            for (int i = 0; i < drives.Length; i++)
-            {
-                Combo.ItemsSource = drives;
-            }
-        }
-
-        private void BackToMainFrm(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            _mainWindow.Show();
-        }
-
-        private DriveInfo[] GetDrives()
-        {
-            DriveInfo[] drives = DriveInfo.GetDrives();
-            List<DriveInfo> drivesThatCouldBeSDorUSB = new List<DriveInfo>();
-
-
-            foreach (var drive in drives)
-            {
-                if (drive.DriveType == DriveType.Removable)
-                    drivesThatCouldBeSDorUSB.Add(drive);
-            }
-
-            return drivesThatCouldBeSDorUSB.ToArray();
+            DriveInfo[] drives = FileManager.GetDrives();
+            Combo.ItemsSource = drives;
+            ListView.ItemsSource = FileManager.FindHomebrewFiles();
 
         }
 
         private void ClickRefresh(object sender, RoutedEventArgs e)
         {
             UpdateDrives();
+        }
+        private void BackToMainFrm(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            _mainWindow.Show();
         }
     }
 }
