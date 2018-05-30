@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Documents;
 using MahApps.Metro.Controls;
 using Microsoft.Win32;
@@ -16,7 +17,8 @@ namespace SHAIO.SDTool
     /// </summary>
     public partial class SDTools : MetroWindow
     {
-        //todo make /SDCard/Homebrew and "/Payloads a global var
+        private bool? NonRemDrives { get; set; }
+        public string HomebrewPath  { get; set; } =  @"SDCard/Homebrew";
 
         private readonly MainWindow _mainWindow;
 
@@ -25,17 +27,30 @@ namespace SHAIO.SDTool
         public SDTools(MainWindow mainWindow)
         {
             InitializeComponent();
+        
+
             FileManager = new FileManager();
             UpdateDrives();
             _mainWindow = mainWindow;
-
+            ExtractButton.IsEnabled = Combo.SelectedItem != null;
         }
 
         private void UpdateDrives()
         {
-            DriveInfo[] drives = FileManager.GetDrives();
+            bool temp = false;
+            if (NonRemDrives != null)
+            {
+                temp = NonRemDrives == true;
+            }
+
+            Combo.ItemsSource = null;
+            Combo.Items.Clear();
+           Combo.UpdateLayout();
+            
+
+            DriveInfo[] drives = FileManager.GetDrives(temp);
             Combo.ItemsSource = drives;
-            ListView.ItemsSource = FileManager.FindHomebrewFiles();
+            ListView.ItemsSource = FileManager.FindHomebrewFiles(HomebrewPath);
 
         }
 
@@ -50,7 +65,7 @@ namespace SHAIO.SDTool
 
         private void OpenFolder(object sender, RoutedEventArgs e)
         {
-            Process.Start(Path.Combine(Directory.GetCurrentDirectory(), @"SDCard/Homebrew"));
+            Process.Start(Path.Combine(Directory.GetCurrentDirectory(), HomebrewPath));
         }
 
         /// <summary>
@@ -60,41 +75,93 @@ namespace SHAIO.SDTool
         /// <param name="e"></param>
         private void AddFile(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog of = new OpenFileDialog();
-            of.Multiselect = true;
-            of.Title = "Add ZIP-File to collection";
-            of.DefaultExt = ".zip";
-            of.Filter = "Zip Files|*.zip";
-            of.CheckPathExists = true;
+            OpenFileDialog of = new OpenFileDialog
+            {
+                Multiselect = true,
+                Title = "Add ZIP-File to collection",
+                DefaultExt = ".zip",
+                Filter = "Zip Files|*.zip",
+                CheckPathExists = true
+            };
 
             if (of.ShowDialog() == true)
             {
                 for (int i = 0; i < of.FileNames.Length; i++)
                 {
-                    if (File.Exists(@"SDCard/Homebrew/" + of.SafeFileNames[i]))
+                    if (File.Exists(HomebrewPath + of.SafeFileNames[i]))
                     {
                         continue;
                     }
-                    File.Copy(of.FileNames[i], Path.Combine(Directory.GetCurrentDirectory(), @"SDCard/Homebrew/"+of.SafeFileNames[i]));
-           
-                    ClickRefresh(null,null);
+                    File.Copy(of.FileNames[i], Path.Combine(Directory.GetCurrentDirectory(), HomebrewPath + of.SafeFileNames[i]));
+
+                    UpdateDrives();
                 }
             }
         }
 
-        private void ClearSDBase(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Opens selected drive in explorer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OpenSdCard(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            DriveInfo temp = (DriveInfo)Combo.SelectedItem;
+            if (temp != null)
+            {
+                Process.Start(temp.Name);
+            }
+
         }
 
-        private void ClearSDFull(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// This button extracts the selected .zip archives into the root of the SD-Card.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ExtractToSdButton(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (ListView.SelectedItem == null)
+            {
+                MessageBox.Show("You need to select something first.\nYou can also select multiple things, just press CTRL while clicking");
+                return;
+            }
+
+            MessageBox.Show("");
         }
 
-        private void ExtractToSDButton(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// If CheckBox drive selection is changed, check if drive is fat32 or exfat
+        /// Also enable ExtractButton if selection isn't null
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Combo_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            throw new NotImplementedException();
+            //check if fat32 or exfat / warn if not
+            DriveInfo temp = (DriveInfo)Combo.SelectedItem;
+            if (temp != null)
+            {
+                if (!((temp.DriveFormat == "FAT32") || (temp.DriveFormat == "exFAT")))
+                {
+                    MessageBox.Show("This drive is not formatted with either FAT32 or exFAT. This will likely not work with your Switch.");
+                }
+            }
+
+            //if the selected Items != null then enable button.
+            ExtractButton.IsEnabled = Combo.SelectedItem != null;
         }
+
+        /// <summary>
+        /// Necessary for checking if all drives should be shown
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NonRemovableDrivesCheck(object sender, RoutedEventArgs e)
+        {
+            NonRemDrives = CheckBox.IsChecked;
+            UpdateDrives();
+        }
+
     }
 }

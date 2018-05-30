@@ -18,15 +18,17 @@ namespace SHAIO.PayloadTools
     {
         private readonly MainWindow _mainWindow;
         public FileManager FileManager { get; set; }
-        public string PathToRcmSmash { get; set; }
+
+        //Sets path to RCM-Smash tool by rajkosto
+        public string PathToRcmSmash { get; set; } = @"Tools/TegraRcmSmash/TegraRcmSmash.exe";
+
+        //Sets path to where payloads are located at
+        public string PayloadPath { get; set; } = @"SDCard/Payload";
 
         public MainTool(MainWindow mainWindow)
         {
             _mainWindow = mainWindow;
             InitializeComponent();
-
-            //Sets path to RCM-Smash tool by rajkosto
-            PathToRcmSmash = @"Tools/TegraRcmSmash/TegraRcmSmash.exe";
 
             //Checks if this is the first launch. Asks to install the drivers.
             if (Settings.Default.firstLaunch)
@@ -45,7 +47,7 @@ namespace SHAIO.PayloadTools
 
         private void FillItemSource()
         {
-            Combo.ItemsSource = FileManager.FindPayloadFiles();
+            Combo.ItemsSource = FileManager.FindPayloadFiles(PayloadPath);
         }
 
         private void BackToMainFrm(object sender, System.ComponentModel.CancelEventArgs e)
