@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 
-namespace SwitchHacksAllInOne.PayloadTools
+namespace SHAIO.PayloadTools
 {
     /// <summary>
     /// Interaction logic for OtherPayloads.xaml

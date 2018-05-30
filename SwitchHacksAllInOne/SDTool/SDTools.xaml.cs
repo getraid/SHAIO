@@ -5,9 +5,9 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Documents;
 using MahApps.Metro.Controls;
-using SwitchHacksAllInOne.Model;
+using SHAIO.Model;
 
-namespace SwitchHacksAllInOne.SDTool
+namespace SHAIO.SDTool
 {
     /// <summary>
     /// Interaction logic for SDTools.xaml

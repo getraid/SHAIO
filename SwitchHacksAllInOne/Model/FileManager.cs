@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Controls;
 
-namespace SwitchHacksAllInOne.Model
+namespace SHAIO.Model
 {
     public class FileManager
     {

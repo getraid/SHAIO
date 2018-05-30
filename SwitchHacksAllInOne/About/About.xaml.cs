@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 
-namespace SwitchHacksAllInOne
+namespace SHAIO
 {
     /// <summary>
     /// Interaction logic for About.xaml

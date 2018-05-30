@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace SwitchHacksAllInOne.Updates
+namespace SHAIO.Updates
 {
     /// <summary>
     /// File which contains Name, Folderpath, Link to repo, version and Filetype.

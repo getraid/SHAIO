@@ -5,7 +5,7 @@ using System.Windows.Threading;
 using AutoUpdaterDotNET;
 using MahApps.Metro.Controls;
 
-namespace SwitchHacksAllInOne.Updates
+namespace SHAIO.Updates
 {
     /// <summary>
     /// Interaction logic for Update.xaml

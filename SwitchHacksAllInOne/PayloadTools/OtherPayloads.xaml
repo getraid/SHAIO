@@ -1,9 +1,9 @@
-﻿<mah:MetroWindow x:Class="SwitchHacksAllInOne.PayloadTools.OtherPayloads"
+﻿<mah:MetroWindow x:Class="SHAIO.PayloadTools.OtherPayloads"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SwitchHacksAllInOne.PayloadTools"
+        xmlns:local="clr-namespace:SHAIO.PayloadTools"
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
         mc:Ignorable="d"
         Title="OtherPayloads" Height="450" Width="800" Closing="CloseWindow">

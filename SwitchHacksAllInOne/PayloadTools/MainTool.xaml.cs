@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
 using MahApps.Metro.Controls;
-using SwitchHacksAllInOne.Model;
-using SwitchHacksAllInOne.Properties;
-using SwitchHacksAllInOne.SDTool;
+using SHAIO.Model;
+using SHAIO.Properties;
+using SHAIO.SDTool;
 
-namespace SwitchHacksAllInOne.PayloadTools
+namespace SHAIO.PayloadTools
 {
     /// <summary>
     /// Interaction logic for PayloadTools.xaml

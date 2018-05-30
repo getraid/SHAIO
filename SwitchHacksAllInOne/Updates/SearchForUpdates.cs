@@ -1,4 +1,4 @@
-﻿namespace SwitchHacksAllInOne.Updates
+﻿namespace SHAIO.Updates
 {
     public class SearchForUpdates
     {
