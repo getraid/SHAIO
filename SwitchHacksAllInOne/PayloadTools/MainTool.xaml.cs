@@ -40,7 +40,7 @@ namespace SHAIO.PayloadTools
             //Todo: Save last chosen payload
             FileManager = new FileManager();
             FillItemSource();
-       
+
         }
 
         private void FillItemSource()
@@ -72,7 +72,7 @@ namespace SHAIO.PayloadTools
         private void MainButtonClick(object sender, RoutedEventArgs e)
         {
             string tempPath = Path.Combine(Directory.GetCurrentDirectory(), PathToRcmSmash);
-            FileInfo temp = (FileInfo) Combo.SelectedItem;
+            FileInfo temp = (FileInfo)Combo.SelectedItem;
             Process.Start(tempPath, '"' + temp.FullName + '"' + " -w");
         }
 
@@ -85,6 +85,12 @@ namespace SHAIO.PayloadTools
         {
             LaunchButton.IsEnabled = Combo.SelectedItem != null;
 
+        }
+
+        private void InstallDrivers(object sender, RoutedEventArgs e)
+        {
+            //todo install driver button
+            throw new NotImplementedException();
         }
     }
 }

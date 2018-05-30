@@ -41,12 +41,12 @@
 
         </ComboBox>
         <Button Grid.ColumnSpan="2" Content="Refresh" Grid.Column="12" Grid.Row="1" Click="ClickRefresh"/>
-        <Button Content="Extract to SD-Card" Grid.Column="7" Grid.Row="7" Grid.ColumnSpan="5"/>
-        <Button Content="Clear SD-Card Root" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" RenderTransformOrigin="0.527,0.496" Grid.ColumnSpan="2" Height="28" Width="119"/>
-        <Button Content="Clear SD-Card Full" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" RenderTransformOrigin="0.527,0.496" Grid.ColumnSpan="2" Height="28" Width="115"/>
+        <Button Content="Extract to SD-Card" Grid.Column="7" Grid.Row="7" Grid.ColumnSpan="5" Click="ExtractToSDButton"/>
+        <Button Content="Clear SD-Card Root" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" RenderTransformOrigin="0.527,0.496" Grid.ColumnSpan="2" Height="28" Width="119" Click="ClearSDBase"/>
+        <Button Content="Clear SD-Card Full" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" RenderTransformOrigin="0.527,0.496" Grid.ColumnSpan="2" Height="28" Width="115" Click="ClearSDFull"/>
         <ListView Grid.ColumnSpan="12" Grid.Column="1" Grid.Row="3" Grid.RowSpan="3" Background="#FFF0F0F0" Name="ListView"/>
-        <Button Content="Add file" Grid.Column="10" FontSize="8" Grid.ColumnSpan="3" Grid.Row="5" />
-        <Button Content="Open Folder" Grid.Column="8" FontSize="8" Grid.Row="5"/>
+        <Button Content="Add file" Grid.Column="10" FontSize="8" Grid.ColumnSpan="3" Grid.Row="5" Click="AddFile" />
+        <Button Content="Open Folder" Grid.Column="8" FontSize="8" Grid.Row="5" Click="OpenFolder"/>
 
 
     </Grid>

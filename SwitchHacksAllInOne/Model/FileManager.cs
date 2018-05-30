@@ -38,9 +38,7 @@ namespace SHAIO.Model
             return files;
 
         }
-
-
-        //todo find all other files
+        //^ and yes I know I could merge that into one but I wanted to have it clear and structured.
 
 
         /// <summary>

@@ -39,8 +39,8 @@
         <Label Content="macOs" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" RenderTransformOrigin="0.514,0.694"/>
         <Label Content="Android" Grid.Column="5" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" RenderTransformOrigin="0.514,0.694"/>
         <Button Content="Web (Chrome required)" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="5" VerticalAlignment="Center" Click="WebButton"/>
-        <Button Content="NXLoader" Grid.Column="5" Grid.Row="3" VerticalAlignment="Center"/>
-        <Button Content="fusee-launcher" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
+        <Button Content="NXLoader" Grid.Column="5" Grid.Row="3" VerticalAlignment="Center" Click="NXLoader"/>
+        <Button Content="fusee-launcher" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Grid.ColumnSpan="3" Click="fuseeButton"/>
         <Label Content="If you want your tool added here, shoot me a message. (info in about-page) " Grid.Column="1" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Bottom" Grid.ColumnSpan="5"/>
 
     </Grid>

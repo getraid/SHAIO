@@ -40,7 +40,7 @@
         <Label Content="Choose payload:" Grid.Column="1" FontSize="14" Grid.Row="2" Grid.RowSpan="5"/>
         <Button Content="Other PayloadLauncher Options" Click="ShowOtherPayloadLaunchers" Grid.Row="8" Grid.Column="6"/>
         <Button Content="What should I do? / Help" Grid.Column="8" FontSize="8" Click="ClickWhatShouldIDo"  Grid.Row="8" Grid.ColumnSpan="4"/>
-        <Button Content="Install Drivers" Grid.Column="1" FontSize="8" Grid.Row="8"/>
+        <Button Content="Install Drivers" Grid.Column="1" FontSize="8" Grid.Row="8" Click="InstallDrivers"/>
         <Button Name="LaunchButton" Content="Launch" Grid.Column="6" Grid.Row="6" RenderTransformOrigin="0.509,0.529" Click="MainButtonClick" Height="69" VerticalAlignment="Bottom" IsEnabled="False" />
         <ComboBox Name="Combo" Grid.ColumnSpan="5" Grid.Column="4" Grid.Row="2" SelectionChanged="Combo_SelectionChanged"/>
         <Button Content="+" Grid.Column="10" Grid.Row="2" Height="35" VerticalAlignment="Bottom" Click="RefreshButton" FontWeight="ExtraLight" FontStretch="Condensed" FontStyle="Italic" FontSize="18"/>
