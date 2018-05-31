@@ -1,12 +1,15 @@
-# Test page.
-This needs to be written as well.
-![Alt text](docs/1.png?raw=true "InstallerOrPortable")
-![Alt text](docs/2.png?raw=true "Installer")
-![Alt text](docs/3.png?raw=true "Icon")
-![Alt text](docs/4.png?raw=true "MainMenu")
-![Alt text](docs/5.png?raw=true "SDTool")
-![Alt text](docs/6.png?raw=true "SelectSDcard")
-![Alt text](docs/7.png?raw=true "PayloadTools")
-![Alt text](docs/8.png?raw=true "InstallDrivers")
-![Alt text](docs/9.png?raw=true "ChoosePayload")
-![Alt text](docs/10.png?raw=true "Launch")
+# SHAIO - Switch Hacks All In One.
+This needs to be fully written as well. For now it's just an image guide.
+
+![SHAIO Logo](https://image.flaticon.com/icons/svg/921/921691.svg?sanitize=true)
+_Icon made by Freepik from www.flaticon.com_
+
+![SHAIO MainMenu](https://i.imgur.com/KwouYJ1.png)
+![SHAIO SDCardTool](https://i.imgur.com/kAhqy0E.png)
+![SHAIO PayloadTool](https://i.imgur.com/CoMO5un.png)
+
+#SHAIO Install/Usage Guide:
+https://imgur.com/a/zljwjZM
+
+#Help
+If you have any questions, please shoot me a message at GBAtemp (rapidraid) or Twitter(@rapidraid)
