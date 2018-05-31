@@ -1,12 +1,5 @@
-<center><img src="https://image.flaticon.com/icons/svg/921/921691.svg?sanitize=true" width="200px">
+<img src="https://image.flaticon.com/icons/svg/921/921691.svg?sanitize=true" width="200px">
 <small>Icon made by Freepik from www.flaticon.com</small>
-
-
-
-![SHAIO MainMenu](https://i.imgur.com/KwouYJ1.png)
-![SHAIO SDCardTool](https://i.imgur.com/kAhqy0E.png)
-![SHAIO PayloadTool](https://i.imgur.com/CoMO5un.png)<center>
-
 
 # What is this
 This is a tool to make switch hacking easier.
@@ -31,21 +24,19 @@ If you want to change the folder structure: Every path is defined in PathSetting
 
 To make your own installer, download [InstallForge](https://installforge.net/download/) and open SHAIO/InstallForge PackageFile/Shaio.ifp. There you can adjust the settings you want and export as an installer. Make sure to set the proper version as well.
 
-<hr>
-# Credits
-
+# Credits 
+```
 Special thanks to the people who made this possible:
-------------------------------------------------------------
-The Switchbrew-Team - http://switchbrew.org<br>
-Michael/SciresM - https://twitter.com/SciresM<br>
-naehrwert - https://twitter.com/naehrwert<br>
-fail0verflow - https://twitter.com/fail0verflow<br>
-DavidBuchanan314 - https://github.com/DavidBuchanan314<br>
-ktemkin - https://www.ktemkin.com/ <br>
-hedgeberg - https://twitter.com/hedgeberg <br>
-rajkosto - https://github.com/rajkosto<br>
-... and many more that I forgot to mention (I'm sorry!) ⊙﹏⊙<br>
-------------------------------------------------
-Other Stuff used:
-mahapps.metro MIT- https://mahapps.com/
+------------------------------------------------------------ 
+The Switchbrew-Team - http://switchbrew.org 
+Michael/SciresM - https://twitter.com/SciresM 
+naehrwert - https://twitter.com/naehrwert 
+fail0verflow - https://twitter.com/fail0verflow 
+DavidBuchanan314 - https://github.com/DavidBuchanan314 
+ktemkin - https://www.ktemkin.com/ 
+hedgeberg - https://twitter.com/hedgeberg 
+rajkosto - https://github.com/rajkosto 
+`... and many more that I forgot to mention (I'm sorry!) ⊙﹏⊙ 
+------------------------------------------------ 
+Other Stuff used: mahapps.metro MIT- https://mahapps.com/
 Autoupdater.NET MIT- https://github.com/ravibpatel/AutoUpdater.NET
