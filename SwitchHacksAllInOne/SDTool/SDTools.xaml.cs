@@ -7,8 +7,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using MahApps.Metro.Controls;
-using Microsoft.Win32;
+using System.IO.Compression;
+using System.IO.Packaging;
+using System.Windows.Forms;
 using SHAIO.Model;
+using MessageBox = System.Windows.MessageBox;
+using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
 
 namespace SHAIO.SDTool
 {
@@ -18,7 +22,7 @@ namespace SHAIO.SDTool
     public partial class SDTools : MetroWindow
     {
         private bool? NonRemDrives { get; set; }
-        public string HomebrewPath  { get; set; } =  @"SDCard/Homebrew";
+
 
         private readonly MainWindow _mainWindow;
 
@@ -27,7 +31,7 @@ namespace SHAIO.SDTool
         public SDTools(MainWindow mainWindow)
         {
             InitializeComponent();
-        
+
 
             FileManager = new FileManager();
             UpdateDrives();
@@ -45,12 +49,12 @@ namespace SHAIO.SDTool
 
             Combo.ItemsSource = null;
             Combo.Items.Clear();
-           Combo.UpdateLayout();
-            
+            Combo.UpdateLayout();
+
 
             DriveInfo[] drives = FileManager.GetDrives(temp);
             Combo.ItemsSource = drives;
-            ListView.ItemsSource = FileManager.FindHomebrewFiles(HomebrewPath);
+            ListView.ItemsSource = FileManager.FindHomebrewFiles(PathSettings.HomebrewPath, "*.zip");
 
         }
 
@@ -65,7 +69,7 @@ namespace SHAIO.SDTool
 
         private void OpenFolder(object sender, RoutedEventArgs e)
         {
-            Process.Start(Path.Combine(Directory.GetCurrentDirectory(), HomebrewPath));
+            Process.Start(Path.Combine(Directory.GetCurrentDirectory(), PathSettings.HomebrewPath));
         }
 
         /// <summary>
@@ -88,11 +92,11 @@ namespace SHAIO.SDTool
             {
                 for (int i = 0; i < of.FileNames.Length; i++)
                 {
-                    if (File.Exists(HomebrewPath + of.SafeFileNames[i]))
+                    if (File.Exists(PathSettings.HomebrewPath + of.SafeFileNames[i]))
                     {
                         continue;
                     }
-                    File.Copy(of.FileNames[i], Path.Combine(Directory.GetCurrentDirectory(), HomebrewPath + of.SafeFileNames[i]));
+                    File.Copy(of.FileNames[i], Path.Combine(Directory.GetCurrentDirectory(), PathSettings.HomebrewPath + of.SafeFileNames[i]));
 
                     UpdateDrives();
                 }
@@ -127,7 +131,20 @@ namespace SHAIO.SDTool
                 return;
             }
 
-            MessageBox.Show("");
+            foreach (FileInfo file in ListView.SelectedItems)
+            {
+                DriveInfo temp = (DriveInfo)Combo.SelectedItem;
+
+                //  ZipFile.ExtractToDirectory(file.FullName, temp.Name);
+                using (var fs = new StreamReader(file.FullName))
+                {
+                    new ZipArchive(fs.BaseStream).ExtractToDirectory(temp.Name, true);
+
+                }
+
+            }
+
+
         }
 
         /// <summary>
@@ -163,5 +180,40 @@ namespace SHAIO.SDTool
             UpdateDrives();
         }
 
+        private void DeleteEntry(object sender, RoutedEventArgs e)
+        {
+            FileInfo fs = (FileInfo)ListView.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Do you want to delete " + fs.Name + "?", "Delete", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                File.Delete(fs.FullName);
+                UpdateDrives();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Thanks to https://stackoverflow.com/questions/14795197/forcefully-replacing-existing-files-during-extracting-file-using-system-io-compr
+    /// </summary>
+    public static class ZipArchiveExtensions
+    {
+        public static void ExtractToDirectory(this ZipArchive archive, string destinationDirectoryName, bool overwrite)
+        {
+            if (!overwrite)
+            {
+                archive.ExtractToDirectory(destinationDirectoryName);
+                return;
+            }
+            foreach (ZipArchiveEntry file in archive.Entries)
+            {
+                string completeFileName = Path.Combine(destinationDirectoryName, file.FullName);
+                if (file.Name == "")
+                {// Assuming Empty for Directory
+                    Directory.CreateDirectory(Path.GetDirectoryName(completeFileName));
+                    continue;
+                }
+                file.ExtractToFile(completeFileName, true);
+            }
+        }
     }
 }

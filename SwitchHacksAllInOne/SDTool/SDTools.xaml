@@ -27,7 +27,8 @@
             <ColumnDefinition Width="101*"/>
             <ColumnDefinition Width="98*"/>
             <ColumnDefinition Width="30*"/>
-            <ColumnDefinition Width="82*"/>
+            <ColumnDefinition Width="69*"/>
+            <ColumnDefinition Width="13*"/>
             <ColumnDefinition Width="80*"/>
             <ColumnDefinition Width="11*"/>
             <ColumnDefinition Width="26*"/>
@@ -36,15 +37,16 @@
             <ColumnDefinition Width="25*"/>
             <ColumnDefinition Width="25*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Select your SD-Card: " Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="26" Width="122"/>
-        <ComboBox Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="7" Name="Combo" SelectionChanged="Combo_SelectionChanged"/>
-        <Button Grid.ColumnSpan="2" Content="Refresh" Grid.Column="12" Grid.Row="1" Click="ClickRefresh"/>
-        <Button Name="ExtractButton" Content="Extract to SD-Card" Grid.Column="7" Grid.Row="7" Grid.ColumnSpan="5" Click="ExtractToSdButton"/>
-        <Button Content="Open SD-Card" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" RenderTransformOrigin="0.527,0.496" Grid.ColumnSpan="2" Height="28" Width="119" Click="OpenSdCard"/>
-        <ListView Grid.ColumnSpan="12" Grid.Column="1" Grid.Row="3" Grid.RowSpan="3" Background="#FFF0F0F0" Name="ListView"/>
-        <Button Content="Add file" Grid.Column="10" FontSize="8" Grid.ColumnSpan="3" Grid.Row="5" Click="AddFile" />
-        <Button Content="Open Folder" Grid.Column="8" FontSize="8" Grid.Row="5" Click="OpenFolder"/>
-        <CheckBox Name="CheckBox" Content="Show non-removable drives" Grid.Column="8" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.ColumnSpan="6"  Checked="NonRemovableDrivesCheck" Unchecked="NonRemovableDrivesCheck"/>
+        <Label Content="Select your SD-Card: " Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <ComboBox Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="8" Name="Combo" SelectionChanged="Combo_SelectionChanged"/>
+        <Button Grid.ColumnSpan="2" Content="Refresh" Grid.Column="13" Grid.Row="1" Click="ClickRefresh"/>
+        <Button Name="ExtractButton" Content="Extract to SD-Card" Grid.Column="7" Grid.Row="7" Grid.ColumnSpan="6" Click="ExtractToSdButton"/>
+        <Button Content="Open SD-Card" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" RenderTransformOrigin="0.527,0.496" Grid.ColumnSpan="2" Click="OpenSdCard"/>
+        <ListView Grid.ColumnSpan="13" Grid.Column="1" Grid.Row="3" Grid.RowSpan="3" Background="#FFF0F0F0" Name="ListView"/>
+        <Button Content="Add file" Grid.Column="11" FontSize="8" Grid.ColumnSpan="3" Grid.Row="5" Click="AddFile" />
+        <Button Content="Open Folder" Grid.Column="7" FontSize="8" Grid.Row="5" Click="OpenFolder"/>
+        <CheckBox Name="CheckBox" Content="Show non-removable drives" Grid.Column="9" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.ColumnSpan="6"  Checked="NonRemovableDrivesCheck" Unchecked="NonRemovableDrivesCheck"/>
+        <Button Content="Delete" Grid.Column="9" FontSize="8" Grid.Row="5" Click="DeleteEntry"/>
 
 
     </Grid>

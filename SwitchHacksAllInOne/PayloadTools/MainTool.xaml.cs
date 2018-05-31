@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
 using MahApps.Metro.Controls;
+using Microsoft.Win32;
 using SHAIO.Model;
 using SHAIO.Properties;
 using SHAIO.SDTool;
@@ -19,11 +20,7 @@ namespace SHAIO.PayloadTools
         private readonly MainWindow _mainWindow;
         public FileManager FileManager { get; set; }
 
-        //Sets path to RCM-Smash tool by rajkosto
-        public string PathToRcmSmash { get; set; } = @"Tools/TegraRcmSmash/TegraRcmSmash.exe";
 
-        //Sets path to where payloads are located at
-        public string PayloadPath { get; set; } = @"SDCard/Payload";
 
         public MainTool(MainWindow mainWindow)
         {
@@ -47,7 +44,7 @@ namespace SHAIO.PayloadTools
 
         private void FillItemSource()
         {
-            Combo.ItemsSource = FileManager.FindPayloadFiles(PayloadPath);
+            Combo.ItemsSource = FileManager.FindPayloadFiles(PathSettings.PayloadPath, "*.bin");
         }
 
         private void BackToMainFrm(object sender, System.ComponentModel.CancelEventArgs e)
@@ -58,9 +55,7 @@ namespace SHAIO.PayloadTools
 
         private void ClickWhatShouldIDo(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("You should get redirected to a YouTube video where you'd see a tutorial or maybe to git.getraid.com/SHAIO");
-            MessageBox.Show("...but I kinda didn't feel like making one yet.");
-            MessageBox.Show("Google is your friend, if not, then shoot me a PN. See the About page");
+            Process.Start(@"http://git.getraid.com/SHAIO/#help");
         }
 
 
@@ -73,7 +68,7 @@ namespace SHAIO.PayloadTools
 
         private void MainButtonClick(object sender, RoutedEventArgs e)
         {
-            string tempPath = Path.Combine(Directory.GetCurrentDirectory(), PathToRcmSmash);
+            string tempPath = Path.Combine(Directory.GetCurrentDirectory(), PathSettings.PathToRcmSmash);
             FileInfo temp = (FileInfo)Combo.SelectedItem;
             Process.Start(tempPath, '"' + temp.FullName + '"' + " -w");
         }
@@ -91,8 +86,52 @@ namespace SHAIO.PayloadTools
 
         private void InstallDrivers(object sender, RoutedEventArgs e)
         {
-            //todo install driver button
-            throw new NotImplementedException();
+            try
+            {
+                Process.Start( Path.Combine(Directory.GetCurrentDirectory(), PathSettings.DriverPath) );
+            }
+            catch
+            {
+                MessageBox.Show("Driver installation aborted, try with Admin-rights");
+            }
+
+        }
+
+        private void AddButton(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog of = new OpenFileDialog
+            {
+                Multiselect = true,
+                Title = "Add BIN-File to collection",
+                DefaultExt = ".bin",
+                Filter = "Bin Files|*.bin",
+                CheckPathExists = true
+            };
+
+            if (of.ShowDialog() == true)
+            {
+                for (int i = 0; i < of.FileNames.Length; i++)
+                {
+                    if (File.Exists(PathSettings.PayloadPath + of.SafeFileNames[i]))
+                    {
+                        continue;
+                    }
+                    File.Copy(of.FileNames[i], Path.Combine(Directory.GetCurrentDirectory(), PathSettings.PayloadPath + of.SafeFileNames[i]));
+
+                    FillItemSource();
+                }
+            }
+        }
+
+        private void RemoveButton(object sender, RoutedEventArgs e)
+        {
+            FileInfo fs = (FileInfo)Combo.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Do you want to delete " + fs.Name + "?", "Delete", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                File.Delete(fs.FullName);
+                FillItemSource();
+            }
         }
     }
 }

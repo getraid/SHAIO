@@ -10,15 +10,18 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"/>
-            <RowDefinition Height="20*"/>
+            <RowDefinition Height="18*"/>
             <RowDefinition Height="35*"/>
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="65*"/>
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="70*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="48*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="41*"/>
             <RowDefinition Height="45*"/>
             <RowDefinition Height="30*"/>
-            <RowDefinition Height="40*"/>
+            <RowDefinition Height="39*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="26*"/>
@@ -37,15 +40,16 @@
             <ColumnDefinition Width="13*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Content="Choose payload:" Grid.Column="1" FontSize="14" Grid.Row="2" Grid.RowSpan="5"/>
-        <Button Content="Other PayloadLauncher Options" Click="ShowOtherPayloadLaunchers" Grid.Row="8" Grid.Column="6"/>
-        <Button Content="What should I do? / Help" Grid.Column="8" FontSize="8" Click="ClickWhatShouldIDo"  Grid.Row="8" Grid.ColumnSpan="4"/>
-        <Button Content="Install Drivers" Grid.Column="1" FontSize="8" Grid.Row="8" Click="InstallDrivers"/>
-        <Button Name="LaunchButton" Content="Launch" Grid.Column="6" Grid.Row="6" RenderTransformOrigin="0.509,0.529" Click="MainButtonClick" Height="69" VerticalAlignment="Bottom" IsEnabled="False" />
+        <Label Content="Choose payload:" Grid.Column="1" FontSize="14" Grid.Row="2" Grid.RowSpan="8"/>
+        <Button Content="Other PayloadLauncher Options" Click="ShowOtherPayloadLaunchers" Grid.Row="11" Grid.Column="6"/>
+        <Button Content="What should I do? / Help" Grid.Column="8" FontSize="8" Click="ClickWhatShouldIDo"  Grid.Row="11" Grid.ColumnSpan="4"/>
+        <Button Content="Install Drivers" Grid.Column="1" FontSize="8" Grid.Row="11" Click="InstallDrivers"/>
+        <Button Name="LaunchButton" Content="Launch" Grid.Column="6" Grid.Row="9" RenderTransformOrigin="0.509,0.529" Click="MainButtonClick" IsEnabled="False" />
         <ComboBox Name="Combo" Grid.ColumnSpan="5" Grid.Column="4" Grid.Row="2" SelectionChanged="Combo_SelectionChanged"/>
-        <Button Content="+" Grid.Column="10" Grid.Row="2" Height="35" VerticalAlignment="Bottom" Click="RefreshButton" FontWeight="ExtraLight" FontStretch="Condensed" FontStyle="Italic" FontSize="18"/>
-        <Button Content="Refresh" Grid.Column="12" Grid.Row="2" Height="35" VerticalAlignment="Bottom" Click="RefreshButton"/>
-        <Label Content="This will launch TegraRcmSmash 1.2.0-2 by rajkosto " Grid.Column="6" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Bottom" Width="194" Foreground="#FF444444" FontSize="8" Height="21"/>
+        <Button Content="+" Grid.Column="10" Grid.Row="2" VerticalAlignment="Bottom" Click="AddButton" FontWeight="ExtraLight" FontStretch="Condensed" FontStyle="Italic" FontSize="18"/>
+        <Button Content="Refresh" Grid.Column="12" Grid.Row="2" Click="RefreshButton"/>
+        <Label Content="This will launch TegraRcmSmash 1.2.0-2 by rajkosto " Grid.Column="6" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Bottom" Foreground="#FF444444" FontSize="8"/>
+        <Button Content="-" Grid.Column="11" Click="RemoveButton" FontWeight="ExtraLight" FontStretch="Condensed" FontStyle="Italic" Grid.Row="2" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
     </Grid>
 </mah:MetroWindow>

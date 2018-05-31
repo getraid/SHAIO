@@ -28,12 +28,12 @@
             <ColumnDefinition Width="61*"/>
         </Grid.ColumnDefinitions>
         <Image Grid.Column="4" Grid.Row="1" Grid.RowSpan="3" Source="/SHAIO;component/punch.ico"/>
-        <Label Content="Programmed by © RapidRaid 2018" Grid.Row="1" RenderTransformOrigin="0.44,0.663" HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Center" Height="26" Width="195"/>
-        <Label Content="getraid.com" Grid.Row="1" Foreground="DeepSkyBlue" Grid.Column="2" MouseDown="Label_MouseDown" HorizontalAlignment="Center" VerticalAlignment="Center" Height="26" Width="73"/>
-        <Label Content="github.com/getraid" Grid.Row="1" Foreground="DeepSkyBlue" Grid.Column="3" MouseDown="Label_MouseDown" HorizontalAlignment="Center" VerticalAlignment="Center" Height="26" Width="114"/>
-        <Label Content="Theme: mahapps.metro" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="135" />
-        <Label Content="mahapps.com" Grid.Column="2" Grid.Row="2" Foreground="DeepSkyBlue" MouseDown="Label_MouseDown" HorizontalAlignment="Center" VerticalAlignment="Center" Height="26" Width="84"  />
-        <RichTextBox Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="4" Grid.RowSpan="2" mah:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
+        <Label Content="Programmed by © RapidRaid 2018" Grid.Row="1" RenderTransformOrigin="0.44,0.663" HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Center"/>
+        <Label Content="getraid.com" Grid.Row="1" Foreground="DeepSkyBlue" Grid.Column="2" MouseDown="Label_MouseDown" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Content="github.com/getraid" Grid.Row="1" Foreground="DeepSkyBlue" Grid.Column="3" MouseDown="Label_MouseDown" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Content="Theme: mahapps.metro" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <Label Content="mahapps.com" Grid.Column="2" Grid.Row="2" Foreground="DeepSkyBlue" MouseDown="Label_MouseDown" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+        <RichTextBox Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="4" Grid.RowSpan="2" mah:TextBoxHelper.HasText="True" >
             <FlowDocument>
                 <Paragraph>
                     <Run Text="Thank you for downloading and using my program!"/>
@@ -75,16 +75,17 @@
                 <Paragraph>
                     <Run Text="Other Stuff used:"/>
                 </Paragraph>
-                <Paragraph>
-                    <Run Text="Costura.Fody MIT- https://github.com/Fody/Costura "/>
-                </Paragraph>
+       
                 <Paragraph>
                     <Run Text="mahapps.metro MIT- https://mahapps.com/"/>
                 </Paragraph>
+                <Paragraph>
+                    <Run Text="Autoupdater.NET MIT- https://github.com/ravibpatel/AutoUpdater.NET"/>
+                </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <Label Content="Icon: 'Punch' by Freepik " Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="138" />
-        <Label Content="flaticon.com" Grid.Column="2" Grid.Row="3" Foreground="DeepSkyBlue" MouseDown="Label_MouseDown" HorizontalAlignment="Center" VerticalAlignment="Center" Height="26" Width="76"  />
+        <Label Content="Icon: 'Punch' by Freepik " Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <Label Content="flaticon.com" Grid.Column="2" Grid.Row="3" Foreground="DeepSkyBlue" MouseDown="Label_MouseDown" HorizontalAlignment="Center" VerticalAlignment="Center"  />
 
     </Grid>
 </mah:MetroWindow>

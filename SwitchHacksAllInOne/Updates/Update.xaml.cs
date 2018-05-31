@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Threading;
@@ -18,9 +19,16 @@ namespace SHAIO.Updates
         public Update(MainWindow mainWindow)
         {
             _mainWindow = mainWindow;
+            InitializeComponent();
+
+            //not in use
             SearchPattern = "updater*.exe";
 
-            InitializeComponent();
+            //Shows user which version they are running;
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
+            CurrentVer.Content = "Current Version: " + fvi.FileVersion;
+
         }
 
         private void SearchForUpdates(object sender, RoutedEventArgs e)
@@ -104,6 +112,7 @@ namespace SHAIO.Updates
         private void UpdateSHAIO(object sender, RoutedEventArgs e)
         {
             AutoUpdater.Start();
+
         }
     }
 }

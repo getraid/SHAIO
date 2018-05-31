@@ -13,9 +13,9 @@ namespace SHAIO.Model
         /// Finds all .zip (homebrew/on sd card) files in (current path)/SDCard/Homebrew/
         /// </summary>
         /// <returns> An array of all .zip (homebrew/on sd card) files</returns>
-        public FileInfo[] FindHomebrewFiles(string pHomebrewPath)
+        public FileInfo[] FindHomebrewFiles(string pHomebrewPath, string fileExtenstion)
         {
-            string fileExtenstion = "*.zip";
+        
           
             DirectoryInfo di = new DirectoryInfo(Path.Combine(Directory.GetCurrentDirectory(), pHomebrewPath));
             DirectoryInfo[] directories = di.GetDirectories(fileExtenstion, SearchOption.AllDirectories);
@@ -28,9 +28,9 @@ namespace SHAIO.Model
         /// Finds all .bin (payload) files in (current path)/SDCard/Homebrew/
         /// </summary>
         /// <returns> An array of all .bin (payload) files</returns>
-        public FileInfo[] FindPayloadFiles(string pPayloadPath)
+        public FileInfo[] FindPayloadFiles(string pPayloadPath, string fileExtenstion)
         {
-            string fileExtenstion = "*.bin";
+         
          
             DirectoryInfo di = new DirectoryInfo(Path.Combine(Directory.GetCurrentDirectory(), pPayloadPath));
             DirectoryInfo[] directories = di.GetDirectories(fileExtenstion, SearchOption.AllDirectories);
