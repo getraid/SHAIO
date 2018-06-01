@@ -7,7 +7,7 @@ It not groundbreaking, but it certainly isn't bad. This windows applications all
 Also this tool has TegraRcmSmash by @rajkosto and the drivers included which allow you to launch payloads from your windows machine. Hopefully you find this program useful.
 
 # How to use
-Go to http://git.getraid.com/SHAIO/
+Follow this image guide: https://imgur.com/a/zljwjZM
 
 # Download
 You can download either an installer (recommended) or a portable version(extract everything, else it won't work) [here](https://github.com/getraid/SHAIO/releases/latest)
