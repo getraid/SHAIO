@@ -29,12 +29,15 @@
             <RowDefinition Height="40*"/>
             <RowDefinition Height="80*"/>
             <RowDefinition Height="40*"/>
-
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="40*"/>
         </Grid.RowDefinitions>
         <Button Content="Update" Grid.Column="2" Grid.Row="2" Click="Update_Click"/>
         <Button Content="SD Tool" Grid.Column="2" Grid.Row="5" Click="SDTools_Click"/>
         <Button Content="Payload Tool" Grid.Column="2" Grid.Row="8" Click="PayloadClick"/>
-        <Button Content="About" Grid.Column="2" Grid.Row="11" Click="AboutClick"/>
-
+     
+        <Button Content="About" Grid.Column="2" Grid.Row="14" Click="AboutClick" />
+        <Button Content="Other Tools" Grid.Column="2" Grid.Row="11" Click="OtherClick" />
     </Grid>
 </mah:MetroWindow>

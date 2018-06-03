@@ -34,8 +34,8 @@
             <ColumnDefinition Width="26*"/>
             <ColumnDefinition Width="25*"/>
             <ColumnDefinition Width="25*"/>
-            <ColumnDefinition Width="25*"/>
-            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="15*"/>
         </Grid.ColumnDefinitions>
         <Label Content="Select your SD-Card: " Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
         <ComboBox Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="8" Name="Combo" SelectionChanged="Combo_SelectionChanged"/>

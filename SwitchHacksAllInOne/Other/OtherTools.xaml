@@ -1,0 +1,39 @@
+﻿<mah:MetroWindow x:Class="SHAIO.Other.OtherTools"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SHAIO.Other"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        mc:Ignorable="d"
+        Title="OtherTools" Height="500" Width="750" Closing="BackToMainFrm">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="HacDiskMount" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Click="HacDiskMount_Click"/>
+        <Button Content="HacToolGUI" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Click="HacTool_Click"/>
+        <Button Content="JoinerScripts" Grid.Column="5" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Click="Joiner_Click" />
+        <Button Content="TegraRcmGUI" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Click="TegraRCMGUI_Click"/>
+        <Button Content="XCI Reader" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Click="XciReader_Click"/>
+        <Button Content="XCI Cutter" Grid.Column="5" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Click="XciCutter_Click"/>
+        <Button Content="Open Tools folder" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Click="ToolsFolder_Click"/>
+
+    </Grid>
+
+</mah:MetroWindow>
