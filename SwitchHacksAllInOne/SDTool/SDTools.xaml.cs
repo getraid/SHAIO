@@ -183,12 +183,16 @@ namespace SHAIO.SDTool
         private void DeleteEntry(object sender, RoutedEventArgs e)
         {
             FileInfo fs = (FileInfo)ListView.SelectedItem;
-            MessageBoxResult result = MessageBox.Show("Do you want to delete " + fs.Name + "?", "Delete", MessageBoxButton.YesNo);
-            if (result == MessageBoxResult.Yes)
+            if (fs != null)
             {
-                File.Delete(fs.FullName);
-                UpdateDrives();
+                MessageBoxResult result = MessageBox.Show("Do you want to delete " + fs.Name + "?", "Delete", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    File.Delete(fs.FullName);
+                    UpdateDrives();
+                }
             }
+
         }
     }
 

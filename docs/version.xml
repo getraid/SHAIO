@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
-    <version>1.0.0.2</version>
+    <version>1.0.0.3</version>
     <url>https://github.com/getraid/SHAIO/releases/latest</url>
     <changelog>https://github.com/getraid/SHAIO/releases/latest#release-header</changelog>
     <mandatory>false</mandatory>
