@@ -41,7 +41,8 @@
         <Button Content="Web (Chrome required)" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="5" VerticalAlignment="Center" Click="WebButton"/>
         <Button Content="NXLoader" Grid.Column="5" Grid.Row="3" VerticalAlignment="Center" Click="NXLoader"/>
         <Button Content="fusee-launcher" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Grid.ColumnSpan="3" Click="fuseeButton"/>
-        <Label Content="If you want your tool added here, shoot me a message. (info in about-page) " Grid.Column="1" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Bottom" Grid.ColumnSpan="5"/>
+        <Label Content="If you want your tool added here, shoot me a message. (info in about-page) " Grid.Column="1" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Grid.ColumnSpan="5"/>
+        <Label Content="or do an pull request on Github " Grid.Column="1" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Bottom" Grid.ColumnSpan="5"/>
 
     </Grid>
 </mah:MetroWindow>

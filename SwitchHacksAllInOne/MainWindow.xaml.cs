@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using AutoUpdaterDotNET;
+using SHAIO.Other;
 using SHAIO.PayloadTools;
 
 namespace SHAIO
@@ -70,6 +71,12 @@ namespace SHAIO
             this.Hide();
         }
 
-  
+
+        private void OtherClick(object sender, RoutedEventArgs e)
+        {
+            OtherTools other = new OtherTools(this);
+            other.Show();
+            this.Hide();
+        }
     }
 }

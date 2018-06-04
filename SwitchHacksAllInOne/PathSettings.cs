@@ -13,5 +13,7 @@
 
         //Sets path where apx drivers are
         public static string DriverPath { get; set; } = @"Installers\apx_driver\InstallDriver.exe";
+
+        public static string Tools { get; set; } = @"Tools/";
     }
 }

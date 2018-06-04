@@ -78,6 +78,9 @@
     <Compile Include="About\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Other\OtherTools.xaml.cs">
+      <DependentUpon>OtherTools.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PathSettings.cs" />
     <Compile Include="PayloadTools\OtherPayloads.xaml.cs">
       <DependentUpon>OtherPayloads.xaml</DependentUpon>
@@ -110,6 +113,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Other\OtherTools.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PayloadTools\OtherPayloads.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

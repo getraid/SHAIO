@@ -1,0 +1,3 @@
+I added under batch processing an "Add Folder" option, though it throws an error, if nothing is chosen. I'll fix it in a later patch.
+
+original repo: https://github.com/Destiny1984/XCI-Cutter
