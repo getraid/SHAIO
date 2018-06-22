@@ -24,6 +24,11 @@ If you want to change the folder structure: Every path is defined in PathSetting
 
 To make your own installer, download [InstallForge](https://installforge.net/download/) and open SHAIO/InstallForge PackageFile/Shaio.ifp. There you can adjust the settings you want and export as an installer. Make sure to set the proper version as well.
 
+# Legal things
+I don't want to be associated with piracy or some other sort of illegal activity.
+The files and payload by Team Executer were only added because you can use the homebrew portions for free.
+Everything else (like backup-loading) involves a licence, therefore I assume you only have good intentions and use the free/legal aspect of the homebrew portion of SX OS.
+
 # Credits 
 ```
 Special thanks to the people who made this possible:
