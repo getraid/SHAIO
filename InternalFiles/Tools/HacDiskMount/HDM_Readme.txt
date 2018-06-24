@@ -1,4 +1,4 @@
-HacDiskMount 1.0.2-2 (30.04.2018)
+HacDiskMount 1.0.4-4 (10.06.2018)
 
 Allows to open Switch eMMC RawNand dumps (and physical devices) and lets you perform operations on the individual partitions within, 
 such as dump/restore from file, or mount them as a drive letter in Windows (with transparent crypto performed provided you have your BIS keys).

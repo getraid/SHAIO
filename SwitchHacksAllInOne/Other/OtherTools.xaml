@@ -30,7 +30,7 @@
         <Button Content="HacToolGUI" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Click="HacTool_Click"/>
         <Button Content="JoinerScripts" Grid.Column="5" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Click="Joiner_Click" />
         <Button Content="TegraRcmGUI" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Click="TegraRCMGUI_Click"/>
-        <Button Content="XCI Reader" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Click="XciReader_Click"/>
+        <Button Content="XCI Explorer" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Click="XciReader_Click"/>
         <Button Content="XCI Cutter" Grid.Column="5" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Click="XciCutter_Click"/>
         <Button Content="Open Tools folder" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Click="ToolsFolder_Click"/>
 

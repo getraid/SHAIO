@@ -59,7 +59,7 @@ namespace SHAIO.Other
 
         private void XciReader_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start(GetFolderPath(@"XCI Reader/XCI.Reader.exe"));
+            Process.Start(GetFolderPath(@"XCI Explorer/"));
         }
         private void XciCutter_Click(object sender, RoutedEventArgs e)
         {

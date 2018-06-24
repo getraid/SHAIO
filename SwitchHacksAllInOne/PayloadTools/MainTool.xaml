@@ -48,7 +48,7 @@
         <ComboBox Name="Combo" Grid.ColumnSpan="5" Grid.Column="4" Grid.Row="2" SelectionChanged="Combo_SelectionChanged"/>
         <Button Content="+" Grid.Column="10" Grid.Row="2" Click="AddButton" FontWeight="ExtraLight" FontStretch="Condensed" FontStyle="Italic" FontSize="18"/>
         <Button Content="Refresh" Grid.Column="12" Grid.Row="2" Click="RefreshButton"/>
-        <Label Content="This will launch TegraRcmSmash 1.2.0-2 by rajkosto " Grid.Column="6" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Bottom" Foreground="#FF444444" FontSize="8"/>
+        <Label Content="This will launch TegraRcmSmash 1.2.1-3 by rajkosto " Grid.Column="6" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Bottom" Foreground="#FF444444" FontSize="8"/>
         <Button Content="-" Grid.Column="11" Click="RemoveButton" FontWeight="ExtraLight" FontStretch="Condensed" FontStyle="Italic" Grid.Row="2" FontSize="18" HorizontalAlignment="Left" />
 
     </Grid>
