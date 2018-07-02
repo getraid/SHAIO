@@ -10,12 +10,13 @@ Also this tool has TegraRcmSmash by @rajkosto and the drivers included which all
 Follow this image guide: https://imgur.com/a/zljwjZM
 
 # Download
-You can download either an installer (recommended) or a portable version(extract everything, else it won't work) [here](https://github.com/getraid/SHAIO/releases/latest)
+You can download either an installer (recommended) or a portable version(extract everything, else it won't work) 
 
-<hr>
+[here](https://github.com/getraid/SHAIO/releases/latest)
+
+
+# How to Compile 
 <small><center>this part is for people who want to improve the code:</center></small>
-
-# How to Compile
 Copy the contents of SHAIO/InternalFiles into SHAIO/SwitchHacksAllInOne/bin/debug and SHAIO/SwitchHacksAllInOne/bin/release folders and compile as usual via VisualStudio. All in written in C#.
 
 # How to make my own version of this

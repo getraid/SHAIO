@@ -34,5 +34,17 @@ namespace SHAIO.Properties {
                 this["firstLaunch"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int lastPayloadIndex {
+            get {
+                return ((int)(this["lastPayloadIndex"]));
+            }
+            set {
+                this["lastPayloadIndex"] = value;
+            }
+        }
     }
 }

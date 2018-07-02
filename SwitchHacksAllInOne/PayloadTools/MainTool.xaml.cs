@@ -36,9 +36,12 @@ namespace SHAIO.PayloadTools
                 Settings.Default.Save();
             }
 
+
+
             //Todo: Save last chosen payload
             FileManager = new FileManager();
             FillItemSource();
+            Combo.SelectedIndex = Settings.Default.lastPayloadIndex;
 
         }
 
@@ -82,13 +85,18 @@ namespace SHAIO.PayloadTools
         {
             LaunchButton.IsEnabled = Combo.SelectedItem != null;
 
+            if (Combo.SelectedItem != null)
+            {
+                Settings.Default.lastPayloadIndex = Combo.SelectedIndex;
+                Settings.Default.Save();
+            }
         }
 
         private void InstallDrivers(object sender, RoutedEventArgs e)
         {
             try
             {
-                Process.Start( Path.Combine(Directory.GetCurrentDirectory(), PathSettings.DriverPath) );
+                Process.Start(Path.Combine(Directory.GetCurrentDirectory(), PathSettings.DriverPath));
             }
             catch
             {

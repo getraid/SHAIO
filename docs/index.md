@@ -8,5 +8,8 @@ This site needs to be fully written as well. For now it's just an image guide.<b
 # SHAIO Install/Usage Guide:
 https://imgur.com/a/zljwjZM
 
+# Download
+https://github.com/getraid/SHAIO/releases/latest
+
 # Help
 If you have any questions, please shoot me a message at GBAtemp (rapidraid) or Twitter(@rapidraid)
