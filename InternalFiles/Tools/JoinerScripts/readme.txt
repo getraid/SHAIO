@@ -1,1 +1,0 @@
-these are the scripts needed to join the multiple parts of your nand 
