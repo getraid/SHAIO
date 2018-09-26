@@ -1,3 +1,6 @@
 [submodule "SHAIOInternalFiles"]
 	path = SHAIOInternalFiles
 	url = https://github.com/Karthik99999/SHAIOInternalFiles
+[submodule "Internal Files"]
+	path = Internal Files
+	url = https://github.com/Karthik99999/SHAIOInternalFiles
